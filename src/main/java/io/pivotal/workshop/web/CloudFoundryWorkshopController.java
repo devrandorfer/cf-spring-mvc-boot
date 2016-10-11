@@ -71,6 +71,7 @@ public class CloudFoundryWorkshopController {
 		if (vcapApplication != null) {
 			Map vcapMap = mapper.readValue(vcapApplication, Map.class);
 			model.addAttribute("vcapApplication", vcapMap);
+			model.addAttribute("appName", vcapMap.get("application_name"));
 		} else {
 			model.addAttribute("vcapApplication", new HashMap<>());
 		}
@@ -80,6 +81,8 @@ public class CloudFoundryWorkshopController {
 
 		Iterable<Attendee> attendees = attendeeRepository.findAll();
 		model.addAttribute("attendees", attendees);
+		
+		
 	}
 
     @RequestMapping(value = "/delete", method = RequestMethod.GET)
