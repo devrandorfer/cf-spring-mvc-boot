@@ -15,7 +15,7 @@ apply plugin: 'eclipse'
 apply plugin: 'spring-boot'
 
 jar {
-	baseName = 'cf-workshop-spring-boot'
+	baseName = 'cf-spring-mvc-boot'
 	version = '0.0.1-SNAPSHOT'
 }
 sourceCompatibility = 1.8
